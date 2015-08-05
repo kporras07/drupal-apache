@@ -11,18 +11,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 COPY ssh/id_rsa.pub $HOME/.ssh/authorized_keys
 COPY ssh/sshd_config /etc/ssh/sshd_config
 
-RUN apt-get install -y apache2 \
-wget \
-curl \
-git \
-php5 \
-php-pear \
-php5-common \
-php5-curl \
-php5-gd \
-php5-json \
-php5-mysql \
-php5-readline
+RUN apt-get install -y apache2 wget curl git php5 php-pear php5-common php5-curl php5-gd php5-json php5-mysql php5-readline
 
 
 RUN echo "mysql-server-5.5 mysql-server/root_password password root" | debconf-set-selections

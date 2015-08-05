@@ -6,3 +6,4 @@ docker run -p 2224:22 -p 80:80 -d jmsv23/drupal-apache
 
 docker run -p 2224:22 -p 80:80 -v /Users/jmsv/volumenes/backups:/backups -v /Users/jmsv/drupalCampCR2015/src/test:/home/www -d jmsv23/drupal-apache
 
+docker run -it --link mysql-server:mysql --rm mysql sh -c 'mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"

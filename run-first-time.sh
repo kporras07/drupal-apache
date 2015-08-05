@@ -55,4 +55,4 @@ do
 done
 
 docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PASSWORD -d mysql:5.5
-docker run -p $SSH_PORT:22 -p $APACHE_PORT:80 -v $DOCROOT:/home/www $VOLUME $NAME --link mysql-server:mysq-server -d jmsv23/drupal-apache
+docker run -p $SSH_PORT:22 -p $APACHE_PORT:80 -v $DOCROOT:/home/www $VOLUME $NAME --link mysql-server:mysql-server -d jmsv23/drupal-apache
